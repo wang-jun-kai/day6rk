@@ -1,0 +1,14 @@
+#ÏßÁ÷
+zuul:
+  ratelimit:
+    enabled: true
+    policy-list:
+      ribbon02:
+        - type:
+            - type: url
+              matcher: /zuul
+        - limit: 2
+          refresh-interval: 3
+          quota: 1
+    repository: consul
+    key-prefix: xianliu-key
